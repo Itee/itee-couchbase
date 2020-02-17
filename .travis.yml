@@ -1,0 +1,26 @@
+language: node_js
+
+branches:
+  only:
+    - master
+
+env:
+  - MOZ_HEADLESS=1 NODE_OPTIONS=--max_old_space_size=8192
+
+addons:
+  firefox: latest
+
+before_script: npm run clean && npm run patch
+
+jobs:
+  include:
+    - stage: test
+      node_js:
+        - "10"
+        - "12"
+        - "lts/*"
+      script: npm run lint && npm run build-test && npm run test
+    - stage: deploy
+      if: branch = master
+      node_js: "12"
+      script: npm run release && npx semantic-release
