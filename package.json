@@ -1,0 +1,107 @@
+{
+    "name": "itee-couchbase",
+    "version": "0.0.0",
+    "description": "The CouchBase database implementation for Itee projects",
+    "keywords": [
+        "itee",
+        "database",
+        "couchbase"
+    ],
+    "author": {
+        "name": "Itee (Tristan Valcke)",
+        "url": "https://github.com/Itee"
+    },
+    "contributors": [],
+    "license": "BSD-3-Clause",
+    "private": false,
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Itee/itee-couchbase.git"
+    },
+    "main": "builds/itee-couchbase.cjs.js",
+    "module": "builds/itee-couchbase.esm.js",
+    "browser": "",
+    "homepage": "https://github.com/Itee/itee-couchbase#readme",
+    "man": "./docs/index.html",
+    "bugs": {
+        "url": "https://github.com/Itee/itee-couchbase/issues"
+    },
+    "engines": {
+        "node": ">=8.16.0"
+    },
+    "os": [
+        "win32",
+        "linux"
+    ],
+    "cpu": [
+        "x64",
+        "ia32"
+    ],
+    "scripts": {
+        "default": "gulp",
+        "help": "gulp help",
+        "patch": "gulp patch",
+        "clean": "gulp clean",
+        "lint": "gulp lint",
+        "doc": "gulp doc",
+        "build-test": "gulp build-test",
+        "bench": "gulp bench",
+        "unit": "gulp unit",
+        "test": "gulp test",
+        "build": "gulp build",
+        "release": "gulp release",
+        "semantic-release": "semantic-release --dry-run --no-ci",
+        "postversion": "gulp build"
+    },
+    "dependencies": {
+        "itee-database": "^8.0.0"
+    },
+    "peerDependencies": {
+        "itee-utils": "^5.1.1",
+        "itee-validators": "^5.1.2",
+        "couchbase": "^3.0.0"
+    },
+    "devDependencies": {
+        "@semantic-release/changelog": "^5.0.0",
+        "@semantic-release/commit-analyzer": "^8.0.1",
+        "@semantic-release/git": "^9.0.0",
+        "@semantic-release/github": "^7.0.3",
+        "@semantic-release/npm": "^7.0.3",
+        "@semantic-release/release-notes-generator": "^9.0.0",
+        "ansi-colors": "^4.1.1",
+        "benchmark": "^2.1.4",
+        "chai": "^4.2.0",
+        "cz-conventional-changelog": "^3.1.0",
+        "del": "^5.1.0",
+        "eslint-plugin-mocha": "^6.2.2",
+        "fancy-log": "^1.3.3",
+        "gulp": "^4.0.2",
+        "gulp-eslint": "^6.0.0",
+        "gulp-jsdoc3": "^2.0.0",
+        "gulp-replace": "^1.0.0",
+        "karma": "^4.4.1",
+        "karma-benchmark": "^1.0.4",
+        "karma-benchmarkjs-reporter": "^1.0.0",
+        "karma-chai": "^0.1.0",
+        "karma-chrome-launcher": "^3.1.0",
+        "karma-edge-launcher": "^0.4.2",
+        "karma-firefox-launcher": "^1.3.0",
+        "karma-htmlfile-reporter": "^0.3.8",
+        "karma-mocha": "^1.3.0",
+        "karma-mocha-reporter": "^2.2.5",
+        "minimist": "^1.2.0",
+        "mocha": "^7.0.1",
+        "mochawesome": "^4.1.0",
+        "rollup": "^1.31.1",
+        "rollup-plugin-commonjs": "^10.1.0",
+        "rollup-plugin-node-resolve": "^5.2.0",
+        "rollup-plugin-terser": "^5.2.0",
+        "semantic-release": "^17.0.3"
+    },
+    "optionalDependencies": {},
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/cz-conventional-changelog"
+        }
+    }
+}
