@@ -1,4 +1,4 @@
-console.log('Itee.Database.CouchBase v1.0.0 - CommonJs')
+console.log('Itee.Database.CouchBase v1.0.1 - CommonJs')
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
@@ -12,7 +12,7 @@ var buffer = require('buffer');
 var fs = _interopDefault(require('fs'));
 var stream = require('stream');
 
-console.log('Itee.Database v8.0.0 - EsModule');
+console.log('Itee.Database v8.0.2 - EsModule');
 
 /**
  * @author [Tristan Valcke]{@link https://github.com/Itee}
@@ -274,7 +274,6 @@ class TAbstractFileConverter {
         const fileReadStream = fs.createReadStream( file );
 
         fileReadStream.on( 'error', ( error ) => {
-            console.error( `Read stream on error: ${error}` );
 
             isOnError = true;
             onError( error );
