@@ -42,9 +42,9 @@ class TCouchBaseDatabase extends TAbstractDatabase {
             },
             function ( err, result ) {
                 if ( err ) {
-                    console.log( err )
+                    this.logger.log( err )
                 } else {
-                    console.log( result )
+                    this.logger.log( result )
                 }
             } )
 
@@ -53,9 +53,9 @@ class TCouchBaseDatabase extends TAbstractDatabase {
         var query = this.driver.N1qlQuery.fromString( n1ql )
         bucket.query( query, [ 13 ], function ( err, result ) {
             if ( err ) {
-                console.log( err )
+                this.logger.log( err )
             } else {
-                console.log( result )
+                this.logger.log( result )
             }
         } )
 
