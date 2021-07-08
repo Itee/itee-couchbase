@@ -1,3 +1,14 @@
+## [1.0.2](https://github.com/Itee/itee-couchbase/compare/v1.0.1...v1.0.2) (2021-07-08)
+
+
+### Bug Fixes
+
+* **package:** apply dependencies fix ([d811ab7](https://github.com/Itee/itee-couchbase/commit/d811ab77b0156c089d1a336675f2e00dfa99f057))
+* **package:** apply npm audit fix ([3b8c9e7](https://github.com/Itee/itee-couchbase/commit/3b8c9e73faf7d90c91c897564de0739da4185d17))
+* **package:** consider itee-database as peer dependency ([1223785](https://github.com/Itee/itee-couchbase/commit/12237858604c28f0653994fa7c0be451a5303d87))
+* **package:** update all dependencies to their latest version ([671c6ff](https://github.com/Itee/itee-couchbase/commit/671c6ff6dc9641bf3dc1ce93ba495af89e1b25f1))
+* **releaserc:** fix missing dev maps ([aea1b28](https://github.com/Itee/itee-couchbase/commit/aea1b282bd1b4f4c3c75be9166d8ea55161d5971))
+
 ## [1.0.1](https://github.com/Itee/itee-couchbase/compare/v1.0.0...v1.0.1) (2020-02-17)
 
 
