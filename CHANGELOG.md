@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/Itee/itee-couchbase/compare/v1.0.2...v1.0.3) (2021-07-21)
+
+
+### Bug Fixes
+
+* **readme:** add simple readme content ([dc8581e](https://github.com/Itee/itee-couchbase/commit/dc8581ef7e3e2d8cbea57083c5f49a3163823fd5))
+
 ## [1.0.2](https://github.com/Itee/itee-couchbase/compare/v1.0.1...v1.0.2) (2021-07-08)
 
 

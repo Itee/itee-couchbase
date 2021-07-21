@@ -1,4 +1,4 @@
-console.log('Itee.Database.CouchBase v1.0.2 - CommonJs')
+console.log('Itee.Database.CouchBase v1.0.3 - CommonJs')
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });

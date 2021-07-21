@@ -1,4 +1,4 @@
-console.log('Itee.Database.CouchBase v1.0.2 - EsModule')
+console.log('Itee.Database.CouchBase v1.0.3 - EsModule')
 import * as CoucheBaseDriver from 'couchbase';
 import { TAbstractDatabase } from 'itee-database';
 
