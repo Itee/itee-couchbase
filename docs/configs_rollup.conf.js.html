@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Itee-CouchBase Module: Config-EsLint</title>
+	<title>Itee-CouchBase Source: configs/rollup.conf.js</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -67,230 +67,168 @@
 <div class="row">
 
 	
-	<div class="col-md-8">
+	<div class="col-md-12">
 	
 		<div id="main">
 			
 
-	<h1 class="page-title">Module: Config-EsLint</h1>
+		<h1 class="page-title">Source: configs/rollup.conf.js</h1>
+    
 <section>
-
-<header>
-    
-</header>
-
-
-<article>
-    <div class="container-overview">
-    
-        
-            <div class="description">The configuration file of the eslint plugin</div>
-        
-
-        
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-	<dt class="tag-author method-doc-label method-doc-details-label">Author:</dt>
-	<dd class="tag-author">
-		<ul>
-			<li><a href="https://github.com/Itee">Tristan Valcke</a></li>
-			</ul>
-	</dd>
-	
-
-	
-
-	
-	<dt class="tag-license method-doc-label method-doc-details-label">License:</dt>
-	<dd class="tag-license">
-		<ul class="dummy">
-			<li><a href="https://opensource.org/licenses/BSD-3-Clause">BSD-3-Clause</a></li>
-		</ul>
-	</dd>
-	
-
-	
-
-
-
-	
-	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
-	<dd class="tag-source">
-		<ul class="dummy">
-			<li>
-				<a href="configs_eslint.conf.js.html">configs/eslint.conf.js</a>,
-				 <a href="configs_eslint.conf.js.html#sunlight-1-line-1">line 1</a>
-			</li>
-		</ul>
-	</dd>
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-        
-    
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <h3 class="subsection-title">Methods</h3>
-
-        <dl>
-            
-<hr>
-<dt>
-    <h4 class="name" id="~CreateEslintConfiguration"><span class="type-signature">&lt;generator, inner> </span>CreateEslintConfiguration()</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Will create an appropriate configuration object for eslint
-    </div>
-    
-
-    
-
-    
-
-    
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
-	<dd class="tag-source">
-		<ul class="dummy">
-			<li>
-				<a href="configs_eslint.conf.js.html">configs/eslint.conf.js</a>,
-				 <a href="configs_eslint.conf.js.html#sunlight-1-line-15">line 15</a>
-			</li>
-		</ul>
-	</dd>
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-<div class="param-desc">
-    The eslint configuration
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">object</span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-</dd>
-
-        </dl>
-    
-
-    
-
-    
-</article>
-
+    <article>
+        <pre
+            class="sunlight-highlight-javascript linenums">/**
+ * @author [Tristan Valcke]{@link https://github.com/Itee}
+ * @license [BSD-3-Clause]{@link https://opensource.org/licenses/BSD-3-Clause}
+ *
+ * @module Config-Rollup
+ * @description The file manage the rollup configuration for build the library using differents arguments. It allow to build with two type of environment (dev and prod), and differents output format.
+ * Use npm run help to display all available build options.
+ *
+ * @requires {@link module: [path]{@link https://nodejs.org/api/path.html}}
+ * @requires {@link module: [rollup-plugin-commonjs]{@link https://github.com/rollup/rollup-plugin-commonjs}}
+ * @requires {@link module: [rollup-plugin-node-resolve]{@link https://github.com/rollup/rollup-plugin-node-resolve}}
+ * @requires {@link module: [rollup-plugin-terser]{@link https://github.com/TrySound/rollup-plugin-terser}}
+ *
+ */
+
+/* eslint-env node */
+
+const packageInfos    = require( '../package' )
+const path            = require( 'path' )
+const commonjs        = require( '@rollup/plugin-commonjs' )
+const { nodeResolve } = require( '@rollup/plugin-node-resolve' )
+const terser          = require( 'rollup-plugin-terser' ).terser
+
+function _computeBanner ( name, format ) {
+
+    const packageName = name || packageInfos.name
+    let prettyFormat  = ''
+
+    switch ( format ) {
+
+        case 'cjs':
+            prettyFormat = 'CommonJs'
+            break
+
+        case 'esm':
+            prettyFormat = 'EsModule'
+            break
+
+        case 'iife':
+            prettyFormat = 'Standalone'
+            break
+
+        case 'umd':
+            prettyFormat = 'Universal'
+            break
+
+        default:
+            throw new RangeError( `Invalid switch parameter: ${ format }` )
+
+    }
+
+    return `console.log('${ packageName } v${ packageInfos.version } - ${ prettyFormat }')`
+
+}
+
+/**
+ * Will create an appropriate configuration object for rollup, related to the given arguments.
+ *
+ * @generator
+ * @param options
+ * @return {Array.&lt;json>} An array of rollup configuration
+ */
+function CreateRollupConfigs ( options ) {
+    'use strict'
+
+    const name      = options.name
+    const input     = options.input
+    const output    = options.output
+    const formats   = options.format.split( ',' )
+    const envs      = options.env.split( ',' )
+    const treeshake = options.treeshake
+    const fileName  = path.basename( input, '.js' )
+
+    const configs = []
+
+    for ( let formatIndex = 0, numberOfFormats = formats.length ; formatIndex &lt; numberOfFormats ; ++formatIndex ) {
+
+        for ( let envIndex = 0, numberOfEnvs = envs.length ; envIndex &lt; numberOfEnvs ; envIndex++ ) {
+
+            const env        = envs[ envIndex ]
+            const isProd     = ( env.includes( 'prod' ) )
+            const format     = formats[ formatIndex ]
+            const outputPath = ( isProd ) ? path.join( output, `${ fileName }.${ format }.min.js` ) : path.join( output, `${ fileName }.${ format }.js` )
+
+            configs.push( {
+                input:    input,
+                external: [
+                    'itee-validators',
+                    'itee-utils',
+                    'couchbase'
+                ],
+                plugins: [
+                    commonjs( {
+                        include: 'node_modules/**'
+                    } ),
+                    nodeResolve( {
+                        preferBuiltins: true
+                    } ),
+                    isProd &amp;&amp; terser()
+                ],
+                onwarn: ( {
+                    loc,
+                    frame,
+                    message
+                } ) => {
+
+                    if ( loc ) {
+                        process.stderr.write( `/!\\ ${ loc.file } (${ loc.line }:${ loc.column }) ${ frame } ${ message }\n` )
+                    } else {
+                        process.stderr.write( `/!\\ ${ message }\n` )
+                    }
+
+                },
+                treeshake: treeshake,
+                output:    {
+                    // core options
+                    file:    outputPath,
+                    format:  format,
+                    name:    name,
+                    globals: {},
+
+                    // advanced options
+                    paths:     {},
+                    banner:    ( isProd ) ? '' : _computeBanner( name, format ),
+                    footer:    '',
+                    intro:     '',
+                    outro:     '',
+                    sourcemap: !isProd,
+                    interop:   true,
+
+                    // danger zone
+                    exports: 'auto',
+                    amd:     {},
+                    indent:  '\t',
+                    strict:  true
+                }
+            } )
+
+        }
+
+    }
+
+    return configs
+
+}
+
+module.exports = CreateRollupConfigs
+
+</pre>
+    </article>
 </section>
+
 
 
 
@@ -300,10 +238,6 @@
 
 	<div class="clearfix"></div>
 
-	
-		<div class="col-md-3">
-			<div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
-		</div>
 	
 
 </div>

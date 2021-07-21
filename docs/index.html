@@ -4,14 +4,14 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Documentation Index</title>
+	<title>Itee-CouchBase Index</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
-	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.dark.css">
 
-	<link type="text/css" rel="stylesheet" href="styles/site.simplex.css">
+	<link type="text/css" rel="stylesheet" href="styles/site.cyborg.css">
 
 </head>
 
@@ -20,7 +20,7 @@
 <div class="navbar navbar-default navbar-fixed-top ">
 <div class="container">
 	<div class="navbar-header">
-		<a class="navbar-brand" href="index.html">Documentation</a>
+		<a class="navbar-brand" href="index.html">Itee-CouchBase</a>
 		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
@@ -32,14 +32,14 @@
 			
 			<li class="dropdown">
 				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
-				<ul class="dropdown-menu ">
+				<ul class="dropdown-menu inline">
 					<li><a href="module-Building.html">Building</a></li><li><a href="module-Config-EsLint.html">Config-EsLint</a></li><li><a href="module-Config-JsDoc.html">Config-JsDoc</a></li><li><a href="module-Config-Karma-Benchs.html">Config-Karma-Benchs</a></li><li><a href="module-Config-Karma-Units.html">Config-Karma-Units</a></li><li><a href="module-Config-Rollup.html">Config-Rollup</a></li><li><a href="module-Config-Rollup-Test.html">Config-Rollup-Test</a></li>
 				</ul>
 			</li>
 			
 			<li class="dropdown">
 				<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b class="caret"></b></a>
-				<ul class="dropdown-menu ">
+				<ul class="dropdown-menu inline">
 					<li><a href="global.html#npmrunbench">npm run bench</a></li><li><a href="global.html#npmrunbuild">npm run build</a></li><li><a href="global.html#npmrunbuild-test">npm run build-test</a></li><li><a href="global.html#npmrunclean">npm run clean</a></li><li><a href="global.html#npmrundoc">npm run doc</a></li><li><a href="global.html#npmrunhelpdefault">npm run help ( default )</a></li><li><a href="global.html#npmrunlint">npm run lint</a></li><li><a href="global.html#npmrunpatch">npm run patch</a></li><li><a href="global.html#npmrunrelease">npm run release</a></li><li><a href="global.html#npmruntest">npm run test</a></li><li><a href="global.html#npmrununit">npm run unit</a></li>
 				</ul>
 			</li>
@@ -93,7 +93,67 @@
 
 
     <section class="readme-section">
-        <article><h1>itee-couchbase</h1></article>
+        <article><h1 align="center">[Itee Couchbase]</h1>
+<br>
+<p align="center">The itee couchbase package contain specific ORM function for itee packages to work with 
+    <a href="https://www.npmjs.com/package/couchbase" target="_blank" rel="noopener noreferrer">
+        couchbase
+    </a>
+</p>
+<br>
+<p align="center">
+    <a href="https://www.npmjs.com/package/itee-couchbase" target="_blank" rel="noopener noreferrer">
+        <img src="https://img.shields.io/npm/v/itee-couchbase" alt="Current package version">
+    </a>
+    <a href="https://github.com/Itee/itee-couchbase" target="_blank" rel="noopener noreferrer">
+        <img src="https://github.com/Itee/itee-couchbase/actions/workflows/node.js.yml/badge.svg" alt="Itee-Cassandra CI">
+    </a>
+    <a href="https://github.com/semantic-release/semantic-release" target="_blank" rel="noopener noreferrer">
+        <img src="https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg" alt="Build status">
+    </a>
+</p>
+<br>
+<h2>How to install</h2>
+<p>From npm:</p>
+<pre><code>npm install itee-couchbase --save
+</code></pre>
+<p>If you want to build the repository from source follow these instructions:</p>
+<pre><code>git clone https://github.com/Itee/itee-couchbase.git
+npm install
+npm run build
+</code></pre>
+<p>then you can copy/paste the module you need from builds folder.</p>
+<br>
+<h2>How to use</h2>
+<p align="center">At begin was <a href="https://itee.github.io/itee-couchbase/">RTFM</a> !</p>
+<br>
+In case you have clone the repository you could also auto-generate the library documentation using: 
+<pre><code>npm run doc
+</code></pre>
+<p>then you will be able to use like this:</p>
+<pre><code>import { ... } from 'itee-couchbase'
+</code></pre>
+<br>
+<h2>License (BSD-3-Clause)</h2>
+<p><strong>Copyright (c) 2015-Present, Itee, Valcke Tristan <a href="https://github.com/Itee">https://github.com/Itee</a>. All rights reserved.</strong></p>
+<p>Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:</p>
+<ul>
+<li>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</li>
+<li>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</li>
+<li>Neither the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</li>
+</ul>
+<p>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot; AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR
+ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
+<p>You should have received a copy of the <a href="https://opensource.org/licenses/BSD-3-Clause">BSD-3-Clause</a> along
+with this program.  If not, see <a href="https://opensource.org/licenses/BSD-3-Clause">https://opensource.org/licenses/BSD-3-Clause</a>.</p></article>
     </section>
 
 
@@ -166,6 +226,16 @@
 
 
 
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="sources_itee-couchbase.js.html">sources/itee-couchbase.js</a>,
+				 <a href="sources_itee-couchbase.js.html#sunlight-1-line-1">line 1</a>
+			</li>
+		</ul>
+	</dd>
 	
 
 	
@@ -275,6 +345,16 @@
 
 
 	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="sources_TCouchBaseDatabase.js.html">sources/TCouchBaseDatabase.js</a>,
+				 <a href="sources_TCouchBaseDatabase.js.html#sunlight-1-line-1">line 1</a>
+			</li>
+		</ul>
+	</dd>
+	
 
 	
 
@@ -352,10 +432,12 @@
 <footer>
 
 
+	<span class="copyright">
+	Copyright 2015-Present <a href="https://github.com/Itee">Itee</a> (Tristan Valcke)
+	</span>
+
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a>
-	
-		on 2021-07-08T10:39:43+00:00
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>
@@ -401,7 +483,7 @@ $( function () {
 	} );
 
 	Sunlight.highlightAll( {
-		lineNumbers : false,
+		lineNumbers : true,
 		showMenu : true,
 		enableDoclinks : true
 	} );
